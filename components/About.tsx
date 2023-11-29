@@ -1,13 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import { useSectionInView } from "@/lib/hooks";
 
 const About = () => {
+  const { ref } = useSectionInView({sectionName: "About", threshold: 0.75});
+
   return (
-    <motion.section id="about" className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
-    initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.175 }}>
+    <motion.section id="about" ref={ref} className="mb-28 max-w-[45rem] text-center leading-8 
+    sm:mb-40 scroll-mt-28" initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.175 }}>
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
         After graduating with a degree in{" "}

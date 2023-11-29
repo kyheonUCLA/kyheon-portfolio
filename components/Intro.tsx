@@ -1,13 +1,13 @@
 "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { motion } from "framer-motion"
-import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs"
+import { BsArrowRight, BsLinkedin } from "react-icons/bs"
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi"
 import pic1 from "@/public/pic1.jpg"
+import { useSectionInView } from "@/lib/hooks";
 
 const Intro = () => {
   const sampleImg = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100";
@@ -15,8 +15,10 @@ const Intro = () => {
   const githubURL = "https://github.com/kyheonUCLA";
   const linkedInURL= "https://www.linkedin.com/in/ky-heon-96a4b11b7";
 
+  const { ref } = useSectionInView({sectionName: "Home", threshold: 0.8});
+
   return (
-    <section id="home" className="mb-28 max-w-[50rem] text-center sm:bmb-0 scroll-mt-96">
+    <section ref={ref} id="home" className="mb-28 max-w-[50rem] text-center sm:bmb-0 scroll-mt-96">
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
