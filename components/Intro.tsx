@@ -16,7 +16,7 @@ const Intro = () => {
   const linkedInURL= "https://www.linkedin.com/in/ky-heon-96a4b11b7";
 
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:bmb-0 ">
+    <section id="home" className="mb-28 max-w-[50rem] text-center sm:bmb-0 scroll-mt-96">
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
