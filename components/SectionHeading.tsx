@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { FC } from "react";
 import { motion } from "framer-motion";
 
 interface SectionHeadingProps {
@@ -7,7 +7,7 @@ interface SectionHeadingProps {
 }
 
 
-const SectionHeading = ({children}: SectionHeadingProps) => {
+const SectionHeading: FC<SectionHeadingProps> = ({ children }) => {
   return (
     <h2 className="text-3xl capitalize font-medium mb-8 text-center">{children}</h2>
   )

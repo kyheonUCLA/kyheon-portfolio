@@ -1,17 +1,17 @@
 "use client"
 
-import React, { useRef } from "react";
+import React, { useRef, FC } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { projectsData } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
 import { useSectionInView } from "@/lib/hooks";
 
-const Projects = () => {
+const FeaturedProjects: FC = () => {
   const { ref } = useSectionInView({sectionName: "Projects", threshold: 0.5});
 
   return (
-    <section id="projects" ref={ref} className="scroll-mt-28">
+    <section id="projects" ref={ref} className="scroll-mt-28 mb-28">
       <SectionHeading>My Projects</SectionHeading>
       <div>
         {
@@ -64,4 +64,4 @@ const Project = ({ title, description, tags, imageUrl} : ProjectProps) => {
   )
 }
 
-export default Projects
+export default FeaturedProjects

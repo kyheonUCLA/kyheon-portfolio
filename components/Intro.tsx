@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { BsArrowRight, BsLinkedin } from "react-icons/bs"
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi"
-import pic1 from "@/public/pic1.jpg"
+import pic1 from '@/public/portfolio-images/pic1.jpg'
 import { useSectionInView } from "@/lib/hooks";
 
 const Intro = () => {

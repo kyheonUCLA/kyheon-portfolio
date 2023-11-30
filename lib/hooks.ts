@@ -8,7 +8,7 @@ type useSectionInViewProps = {
   threshold: number
 }
 
-const useSectionInView = ({sectionName, threshold}: useSectionInViewProps) => {
+const useSectionInView = ({sectionName, threshold = 0.75}: useSectionInViewProps) => {
   const { ref, inView } = useInView({ threshold });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   
@@ -16,7 +16,7 @@ const useSectionInView = ({sectionName, threshold}: useSectionInViewProps) => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection(sectionName);
     }
-  }, [inView, setActiveSection, timeOfLastClick]) 
+  }, [inView, setActiveSection, timeOfLastClick, sectionName]) 
 
   return { ref };
 }
