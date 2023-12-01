@@ -6,17 +6,16 @@ import { motion } from "framer-motion"
 import { BsArrowRight, BsLinkedin } from "react-icons/bs"
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi"
-import pic1 from '@/public/portfolio-images/pic1.jpg'
+import pic2 from '@/public/portfolio-assets/pic2.png'
 import { useSectionInView } from "@/lib/hooks";
-import { useRouter } from "next/router";
 
 const Intro = () => {
   const sampleImg = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100";
   const buttonStyles = "cursor-pointer border border-black/10 outline-none transition";
   const githubURL = "https://github.com/kyheonUCLA";
   const linkedInURL= "https://www.linkedin.com/in/ky-heon-96a4b11b7";
-  //const path = useRouter().asPath;
-  //console.log(path)
+  
+  
 
   const { ref } = useSectionInView({sectionName: "Home", threshold: 0.8});
 
@@ -26,8 +25,8 @@ const Intro = () => {
         <div className="relative">
           <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "tween", duration: 0.2 }}>
-            <Image src={sampleImg} width="192" height="192" quality="95" priority={true} alt="portfolio picture"
-              className="h-24 w-24 rounded-full border-[0.35rem] border-white shadow-xl"/>
+            <Image src={pic2} width="192" height="192" quality="95" priority={true} alt="portfolio picture"
+              className="h-44 w-44 rounded-full border-[0.35rem] border-gray-200 shadow-xl"/>
           </motion.div>
             <motion.span className="absolute bottom-0 right-0 text-4xl"
             initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} 

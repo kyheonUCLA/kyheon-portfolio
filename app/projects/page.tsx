@@ -1,7 +1,7 @@
 import Intro from '@/components/Intro'
 import ProjectGrid from '@/components/ProjectGrid'
 
-const ProjectsPage = () => {
+function ProjectsPage() {
   return (
     <main className="flex flex-col items-center px-4">
       <ProjectGrid />
@@ -9,4 +9,4 @@ const ProjectsPage = () => {
   )
 }
 
-export default ProjectsPage
+export default ProjectsPage;

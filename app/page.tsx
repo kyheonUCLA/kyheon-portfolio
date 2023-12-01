@@ -4,8 +4,9 @@ import Intro from '@/components/Intro'
 import FeaturedProjects from '@/components/FeaturedProjects'
 import SectionDivider from '@/components/SectionDivider'
 import Skills from '@/components/Skills'
+import MainHeader from '@/components/MainHeader'
 
-const HomePage = () => {
+function HomePage() {
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
@@ -17,4 +18,5 @@ const HomePage = () => {
   )
 }
 
-export default HomePage;
+export default HomePage
+

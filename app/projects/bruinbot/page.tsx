@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-const BruinBotPage = () => {
+function BruinBotPage() {
   return (
     <main className="flex flex-col items-center px-4">
       Bruin Bot Page

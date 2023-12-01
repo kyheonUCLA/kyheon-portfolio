@@ -8,8 +8,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 const ProjectGrid: FC = () => {
-  //const path = useRouter().asPath;
-  //console.log(path);
 
   return (
     <section className="">
@@ -36,13 +34,21 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL}
   return (
     <div className="mb-3 sm:mb-8">
       <section className="relative group bg-gray-100 max-w-[52rem] border border-black/5 rounded-lg
-        overflow-hidden sm:pr-8 sm:h-[20rem] hover:bg-gray-200">
+         sm:pr-8 sm:h-[20rem] hover:bg-gray-200">
         <div className="t-4 pb-7 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full">
-          <h3 className="text-2xl font-semibold">{title}</h3>
+          <h3 className="text-2xl font-semibold cursor-pointer hover:text-gray-600">{title}</h3>
           <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
+          <ul className="flex flex-wrap mt-auto gap-2">
+            {
+              tags.map((tag, idx) => (
+              <li className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider 
+              text-white rounded-full">{tag}</li>
+              ))
+            }
+          </ul>
         </div>
-        <Image src={imageURL} alt={title} quality={95} className="absolute top-0 right-[-5rem] w-[28.25rem] 
-        rounded-t-lg shadow-2xl scale-75 group-hover:scale-[0.80] transition"/>
+        <Image src={imageURL} alt={title} quality={95} className="absolute top-[-1.85rem] right-[-2.25rem] w-[28.25rem] 
+        rounded-lg border border-black/10 shadow-2xl scale-[0.7] group-hover:scale-[0.75] transition"/>
       </section>
     </div>
   )

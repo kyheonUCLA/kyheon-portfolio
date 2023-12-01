@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-const ElectroPage = () => {
+function ElectroPage() {
   return (
     <main className="flex flex-col items-center px-4">
       Electro Page
