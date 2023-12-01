@@ -3,13 +3,13 @@ import hellLizard from "@/public/odysseyai-assets/hell-lizard.png";
 import electro from "@/public/electro-assets/electro.png";
 import bruinbot from "@/public/bruinbot-assets/bruin-bear.png";
 import robot from "@/public/bruinbot-assets/bruinbot-left.png";
-
+import mechanism from "@/public/mechanism-assets/mechanism.gif"
 
 const projectCardData = [
   { title: "Mechanism",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam aliquam ipsum eget luctus. Proin a tortor sit amet libero aliquam vestibulum. Quisque nec gravida velit. Mauris facilisis felis et nunc gravida, vel fringilla libero dictum.",
     tags: ["MATLAB", "SOLIDWORKS", "Julia"],
-    imageURL: chebyshev,
+    imageURL: mechanism,
   },
 
   { title: "odyssey.ai",

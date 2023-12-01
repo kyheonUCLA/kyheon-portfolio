@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { projectsData } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
+import Link from "next/link";
+import { BsArrowRight } from "react-icons/bs"
 import { useSectionInView } from "@/lib/hooks";
 
 const FeaturedProjects: FC = () => {
@@ -22,6 +24,13 @@ const FeaturedProjects: FC = () => {
           ))
         }
       </div>
+      <motion.div className="flex flex-col sm:flex-row items-center justify-center">
+        <Link href="/projects" className="group bg-gray-800 text-white px-7 py-3 flex mt-8 text-center
+          items-center gap-2 rounded-full hover:bg-gray-950 focus:scale-105 hover:scale-105 
+          active:scale-105 cursor-pointer border border-black/10 outline-none transition">More Projects 
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" /> 
+        </Link>
+      </motion.div>
     </section>
   )
 }

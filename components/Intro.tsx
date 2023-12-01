@@ -8,12 +8,15 @@ import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi"
 import pic1 from '@/public/portfolio-images/pic1.jpg'
 import { useSectionInView } from "@/lib/hooks";
+import { useRouter } from "next/router";
 
 const Intro = () => {
   const sampleImg = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100";
   const buttonStyles = "cursor-pointer border border-black/10 outline-none transition";
   const githubURL = "https://github.com/kyheonUCLA";
   const linkedInURL= "https://www.linkedin.com/in/ky-heon-96a4b11b7";
+  //const path = useRouter().asPath;
+  //console.log(path)
 
   const { ref } = useSectionInView({sectionName: "Home", threshold: 0.8});
 

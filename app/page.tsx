@@ -5,7 +5,7 @@ import FeaturedProjects from '@/components/FeaturedProjects'
 import SectionDivider from '@/components/SectionDivider'
 import Skills from '@/components/Skills'
 
-export default function Home() {
+const HomePage = () => {
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
@@ -16,3 +16,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default HomePage;
