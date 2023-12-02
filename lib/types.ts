@@ -1,5 +1,6 @@
-import { links } from "./data";
+import { mainLinks } from "./data";
 
-type SectionName = (typeof links)[number]["name"];
+type SectionName = (typeof mainLinks)[number]["name"];
+type Theme = "light" | "dark";
 
-export type { SectionName }
+export type { SectionName, Theme }

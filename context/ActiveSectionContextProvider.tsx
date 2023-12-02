@@ -39,4 +39,4 @@ const useActiveSectionContext = () => {
 }
 
 export default ActiveSectionContextProvider
-export { ActiveSectionContext, useActiveSectionContext }
+export { useActiveSectionContext }

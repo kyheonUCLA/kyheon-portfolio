@@ -54,18 +54,18 @@ const Intro = () => {
         </Link>
 
         <a className={`group bg-white text-gray-950 px-7 py-3 flex items-center gap-2 
-        rounded-full hover:bg-gray-200 focus:scale-105 hover:scale-105 active:scale-105 
-        hover:text-color-950 ${buttonStyles}`} href="/CV.pdf" download>
+        rounded-full hover:bg-gray-200 focus:scale-105 hover:scale-105 active:scale-105
+        hover:text-color-950 dark:bg-white/10 dark:text-white/80 ${buttonStyles}`} href="/CV.pdf" download>
           Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition"/>
         </a>
 
-        <a className={`bg-white text-gray-950 p-4 flex items-center gap-2 rounded-full
+        <a className={`bg-white text-gray-950 p-4 flex items-center gap-2 rounded-full dark:bg-white/10 dark:text-white/80
          hover:bg-gray-200 focus:scale-110 hover:scale-110 active:scale-110 hover:text-color-950 ${buttonStyles}`}
          href={linkedInURL} target="_blank">
           <BsLinkedin />
         </a>
 
-        <a className={`bg-white text-gray-950 p-4 flex items-center gap-2 rounded-full text-[1.15rem] 
+        <a className={`bg-white text-gray-950 p-4 flex items-center gap-2 rounded-full text-[1.15rem] dark:bg-white/10 dark:text-white/80
         hover:bg-gray-200 focus:scale-110 hover:scale-110 active:scale-110 hover:text-color-950 ${buttonStyles}`}
         href={githubURL} target="_blank">
           <FaGithubSquare />

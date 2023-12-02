@@ -21,4 +21,8 @@ const useSectionInView = ({sectionName, threshold = 0.75}: useSectionInViewProps
   return { ref };
 }
 
+const useTheme = () => {
+  
+}
+
 export { useSectionInView }

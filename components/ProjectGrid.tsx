@@ -10,9 +10,9 @@ const fadeInAnimationVariants = {
   initial: { 
     opacity: 0, y: 100
   },
-  animate: (idx:number) => ({
+  animate: (idx:number = 0) => ({
     opacity: 1, y: 0, 
-    transition: { delay: 0.05 * idx }
+    transition: { delay: 0.05 * idx, type: 'spring', stiffness: 100, damping: 10 }
   })
 } 
 
@@ -36,7 +36,7 @@ const ProjectGrid: FC = () => {
   )
 }
 
-type ProjectCardProps = (typeof projectCardData)[number] & { idx: number };
+type ProjectCardProps = (typeof projectCardData)[number] & { idx?: number };
 
 const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL, idx}) => {
 
