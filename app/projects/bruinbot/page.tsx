@@ -1,9 +1,11 @@
+import SectionHeading from "@/components/SectionHeading";
 import React, { FC } from "react";
 
-function BruinBotPage() {
+const BruinBotPage = () => {
   return (
-    <main className="flex flex-col items-center px-4">
-      Bruin Bot Page
+    <main>
+      <SectionHeading>Bruin Bot</SectionHeading>
+  
     </main>
   )
 }

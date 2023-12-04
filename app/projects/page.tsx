@@ -1,7 +1,7 @@
-import Intro from '@/components/Intro'
+import { FC } from 'react';
 import ProjectGrid from '@/components/ProjectGrid'
 
-function ProjectsPage() {
+const ProjectsPage: FC = () => {
   return (
     <main className="flex flex-col items-center px-4">
       <ProjectGrid />

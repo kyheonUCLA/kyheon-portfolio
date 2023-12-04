@@ -1,9 +1,10 @@
+import SectionHeading from "@/components/SectionHeading";
 import React, { FC } from "react";
 
-function ElectroPage() {
+const ElectroPage = () => {
   return (
-    <main className="flex flex-col items-center px-4">
-      Electro Page
+    <main>
+      <SectionHeading>Electro</SectionHeading>
     </main>
   )
 }

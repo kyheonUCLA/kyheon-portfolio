@@ -1,12 +1,12 @@
+import { FC }  from 'react'
 import About from '@/components/About'
 import Experience from '@/components/Experience'
 import Intro from '@/components/Intro'
 import FeaturedProjects from '@/components/FeaturedProjects'
-import SectionDivider from '@/components/SectionDivider'
 import Skills from '@/components/Skills'
-import MainHeader from '@/components/MainHeader'
+import Contact from '@/components/Contact'
 
-function HomePage() {
+const HomePage: FC = () => {
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
@@ -14,9 +14,10 @@ function HomePage() {
       <FeaturedProjects />
       <Skills />
       <Experience />
+      <Contact />
     </main>
   )
 }
 
-export default HomePage
+export default HomePage;
 

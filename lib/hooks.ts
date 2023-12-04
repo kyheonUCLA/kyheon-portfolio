@@ -1,7 +1,10 @@
-import { useEffect, FC } from "react";
+import { useEffect } from "react";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { useActivePageContext } from "@/context/ActivePageContextProvider";
 import { useInView } from "react-intersection-observer";
+import { projectBlogData } from "./projects-data/projectData";
 import type { SectionName } from "./types";
+
 
 type useSectionInViewProps = {
   sectionName: SectionName,
@@ -21,8 +24,10 @@ const useSectionInView = ({sectionName, threshold = 0.75}: useSectionInViewProps
   return { ref };
 }
 
-const useTheme = () => {
-  
+const useProject = () => {
+  const { activePage, setActivePage } = useActivePageContext();
+  // const project = projectBlogData[activePage];
+  // return project;
 }
 
-export { useSectionInView }
+export { useSectionInView, useProject }

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { projectCardData } from "@/lib/projects-data/projectData";
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
+import Link from "next/link";
 
 const fadeInAnimationVariants = {
   initial: { 
@@ -12,7 +13,7 @@ const fadeInAnimationVariants = {
   },
   animate: (idx:number = 0) => ({
     opacity: 1, y: 0, 
-    transition: { delay: 0.05 * idx, type: 'spring', stiffness: 100, damping: 10 }
+    transition: { delay: 0.01 * idx, type: 'spring', stiffness: 100, damping: 20 }
   })
 } 
 
@@ -38,7 +39,7 @@ const ProjectGrid: FC = () => {
 
 type ProjectCardProps = (typeof projectCardData)[number] & { idx?: number };
 
-const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL, idx}) => {
+const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL, pageURL, idx}) => {
 
   return (
     <motion.div className="mb-3 sm:mb-8" variants={fadeInAnimationVariants} initial="initial" whileInView="animate"
@@ -46,7 +47,10 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL,
       <section className="relative group bg-gray-100 max-w-[52rem] border border-black/5 rounded-lg
          sm:pr-8 sm:h-[20rem] hover:bg-gray-200">
         <div className="t-4 pb-7 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full">
-          <h3 className="text-2xl font-semibold cursor-pointer hover:text-gray-600">{title}</h3>
+          <Link className="text-2xl font-semibold cursor-pointer hover:text-gray-600"
+          href={pageURL}>
+            {title}
+          </Link>
           <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
           <ul className="flex flex-wrap mt-auto gap-2">
             {

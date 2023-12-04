@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  --line-color: #e5e7eb;
+}
+
+/*custom css classes applied tailwind style*/
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
