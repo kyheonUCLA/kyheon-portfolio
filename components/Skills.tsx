@@ -2,7 +2,7 @@
 
 import React, { FC } from "react";
 import SectionHeading from "./SectionHeading";
-import { skillsData } from "@/lib/data";
+import { portfolioData } from "@/lib/projects-data/portfolio-data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
@@ -25,7 +25,7 @@ const Skills: FC = () => {
       <SectionHeading>Skills</SectionHeading>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-950">
         {
-          skillsData.map((skill, idx) => (
+          portfolioData.skills.map((skill, idx) => (
             <motion.li variants={fadeInAnimationVariants} initial="initial" whileInView="animate"
             viewport={{ once: true }} custom={idx}
             className="bg-white border border-black/[0.1] rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80" 

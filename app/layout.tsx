@@ -6,6 +6,10 @@ import ActiveSectionContextProvider from '@/context/ActiveSectionContextProvider
 import MainFooter from '@/components/MainFooter'
 import ThemeSwitch from '@/components/ThemeSwitch'
 import ThemeContextProvider from '@/context/ThemeContextProvider'
+import ActivePageContextProvider from '@/context/ActivePageContextProvider'
+
+
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -29,12 +33,14 @@ export default function RootLayout({
         blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]">
       </div>
       <ThemeContextProvider>
+        <ActivePageContextProvider>
         <ActiveSectionContextProvider>
           <MainHeader />
           {children}
           <MainFooter />
         </ActiveSectionContextProvider>
         <ThemeSwitch />
+        </ActivePageContextProvider>
       </ThemeContextProvider>
       </body>
     </html>

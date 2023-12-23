@@ -2,24 +2,29 @@
 
 import React, { useRef, FC } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { featuredProjectsData } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs"
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { useActivePageContext } from "@/context/ActivePageContextProvider";
+
+// Static Data Imports
+import { portfolioData } from "@/lib/projects-data/portfolio-data";
+
 
 const FeaturedProjects: FC = () => {
   const { ref } = useSectionInView({sectionName: "Projects", threshold: 0.5});
   const { setActiveSection }= useActiveSectionContext();
-
+  const { setActivePage } = useActivePageContext();
+  
   return (
     <section id="projects" ref={ref} className="scroll-mt-28 mb-28">
       <SectionHeading>My Projects</SectionHeading>
       <div>
         {
-          featuredProjectsData.map((project, idx) => (
+          portfolioData.featured.map((project, idx) => (
             <React.Fragment key={idx}>
               <Project {...project} />
             </React.Fragment>
@@ -27,7 +32,10 @@ const FeaturedProjects: FC = () => {
         }
       </div>
       <motion.div className="flex flex-col sm:flex-row items-center justify-center">
-        <Link href="/projects" onClick={() => setActiveSection('Projects')}
+        <Link href="/projects" onClick={() => {
+          setActiveSection('Projects');
+          setActivePage('projects');
+        }}
           className="group bg-gray-800 text-white px-7 py-3 flex mt-8 text-center
           items-center gap-2 rounded-full hover:bg-gray-950 focus:scale-105 hover:scale-105 
           active:scale-105 cursor-pointer border border-black/10 outline-none transition">More Projects 
@@ -38,7 +46,7 @@ const FeaturedProjects: FC = () => {
   )
 }
 
-type ProjectProps = (typeof featuredProjectsData)[number]
+type ProjectProps = (typeof portfolioData.featured)[number]
 
 const Project = ({ title, description, tags, imageUrl} : ProjectProps) => {
   const ref = useRef<HTMLDivElement>(null)

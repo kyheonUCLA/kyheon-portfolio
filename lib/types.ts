@@ -1,6 +1,10 @@
-import { mainLinks } from "./data";
+import { portfolioData } from "./projects-data/portfolio-data";
+import { pageData, projectData } from "./data";
 
-type SectionName = (typeof mainLinks)[number]["name"];
+type PageName = (typeof pageData)[number]["name"];
+type SectionName = (typeof portfolioData.links)[number]["name"];
 type Theme = "light" | "dark";
 
-export type { SectionName, Theme }
+type ProjectCardType = (typeof projectData)[number]
+
+export type { SectionName, PageName, Theme }

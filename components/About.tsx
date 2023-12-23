@@ -4,6 +4,7 @@ import React, { FC } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { useSectionInView } from "@/lib/hooks";
+import Test from "./Test";
 
 const About: FC = () => {
   const { ref } = useSectionInView({sectionName: "About", threshold: 0.75});
@@ -37,7 +38,6 @@ const About: FC = () => {
         <span className="font-medium">history and philosophy</span>. I&apos;m also
         learning how to play the guitar.
       </p>
-
     </motion.section>
   )
 }
