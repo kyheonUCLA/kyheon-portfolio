@@ -29,18 +29,18 @@ const Intro = () => {
               className="h-44 w-44 rounded-full border-[0.35rem] border-gray-200 shadow-xl"/>
           </motion.div>
         </div>
-        
       </div>
 
       <motion.h1 className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        <span className="font-bold">Hello, I'm Ky.</span> I'm a{" "}
-        <span className="font-bold">self taught developer</span> with{" "}
-        <span className="font-bold">2 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is the MERN{" "}
-        <span className="italic">{"("}MongoDB, Express, React, Node{")"}</span>{" "}techstack.
-        <span className="">{" "}I built this website using Next.js </span>
+      initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+      <span className="font-bold">Hello, I&apos;m Ky.</span> I&apos;m a{" "}
+      <span className="font-bold">self-taught developer</span> with{" "}
+      <span className="font-bold">2 years</span> of experience. I enjoy
+      building <span className="italic">sites &amp; apps</span>. My focus is the MERN{" "}
+      <span className="italic">{"("}MongoDB, Express, React, Node{")"}</span>{" "}tech stack.
+      <span className="">{" "}I built this website using Next.js </span>
       </motion.h1>
+
 
       <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ y: 100, opacity: 0 }} animate={{ y: 0 , opacity: 1 }} transition={{ delay: 0.1 }}>
