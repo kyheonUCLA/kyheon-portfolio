@@ -28,10 +28,6 @@ const Intro = () => {
             <Image src={pic2} width="192" height="192" quality="95" priority={true} alt="portfolio picture"
               className="h-44 w-44 rounded-full border-[0.35rem] border-gray-200 shadow-xl"/>
           </motion.div>
-            <motion.span className="absolute bottom-0 right-0 text-4xl"
-            initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} 
-            transition={{ type: "spring", stiffness: 125, delay: 0.1, duration: 0.75 }}>💀
-            </motion.span>
         </div>
         
       </div>
@@ -52,23 +48,23 @@ const Intro = () => {
           setActiveSection("Contact"); 
           setTimeOfLastClick(Date.now()); }}
         className={`group bg-gray-800 text-white px-7 py-3 flex items-center gap-2 rounded-full
-         hover:bg-gray-950 focus:scale-105 hover:scale-105 active:scale-105 ${buttonStyles}`}>Contact me here 
+         hover:bg-gray-900 focus:scale-105 hover:scale-105 active:scale-105 ${buttonStyles}`}>Contact me here 
         <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" /> 
         </Link>
 
         <a className={`group bg-white text-gray-950 px-7 py-3 flex items-center gap-2 
         rounded-full hover:bg-gray-200 focus:scale-105 hover:scale-105 active:scale-105
-        hover:text-color-950 dark:bg-white/10 dark:text-white/80 ${buttonStyles}`} href="/CV.pdf" download>
+        hover:text-color-950 dark:bg-white/20 dark:text-white/80 ${buttonStyles}`} href="/CV.pdf" download>
           Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition"/>
         </a>
 
-        <a className={`bg-white text-gray-950 p-4 flex items-center gap-2 rounded-full dark:bg-white/10 dark:text-white/80
+        <a className={`bg-white text-gray-950 p-4 flex items-center gap-2 rounded-full dark:bg-white/20 dark:text-white/80
          hover:bg-gray-200 focus:scale-110 hover:scale-110 active:scale-110 hover:text-color-950 ${buttonStyles}`}
          href={linkedInURL} target="_blank">
           <BsLinkedin />
         </a>
 
-        <a className={`bg-white text-gray-950 p-4 flex items-center gap-2 rounded-full text-[1.15rem] dark:bg-white/10 dark:text-white/80
+        <a className={`bg-white text-gray-950 p-4 flex items-center gap-2 rounded-full text-[1.15rem] dark:bg-white/20 dark:text-white/80
         hover:bg-gray-200 focus:scale-110 hover:scale-110 active:scale-110 hover:text-color-950 ${buttonStyles}`}
         href={githubURL} target="_blank">
           <FaGithubSquare />

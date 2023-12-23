@@ -33,8 +33,13 @@ const ThemeContextProvider: FC<ThemeContextProviderProps> = ({ children }) => {
     const localTheme = window.localStorage.getItem("theme") as Theme | null;
     if (localTheme) {
       setTheme(localTheme);
+      if (localTheme == "dark") {
+        document.documentElement.classList.add("dark")
+      }
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
+      window.localStorage.setItem("theme", "dark"); 
+      document.documentElement.classList.add("dark") 
     } 
   }, []);
 

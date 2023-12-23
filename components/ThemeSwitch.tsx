@@ -1,7 +1,6 @@
 "use client";
 
 import React, { FC, useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { BsSun, BsMoon } from "react-icons/bs";
 import { useThemeContext } from "@/context/ThemeContextProvider";
 

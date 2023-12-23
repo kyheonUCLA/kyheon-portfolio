@@ -12,7 +12,7 @@ const fadeInAnimationVariants = {
   },
   animate: (idx:number) => ({
     opacity: 1, y: 0, 
-    transition: { delay: 0.05 * idx }
+    transition: { delay: 0.025 * idx }
   })
 } 
 
