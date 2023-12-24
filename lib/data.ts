@@ -30,5 +30,11 @@ const pageData = [
 
 const allProjectsData = [chebyshevData, electroData] as const;
 
+const projectsMap = {
+  chebyshev: chebyshevData,
+  electro: electroData,
+  main: {toc: {}},
+  projects: {toc: {}},
+}
 
-export { allProjectsData, pageData}
+export { allProjectsData, pageData, projectsMap}

@@ -8,8 +8,7 @@ import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs"
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
-import { useActivePageContext } from "@/context/ActivePageContextProvider";
-
+ 
 // Static Data Imports
 import { portfolioData } from "@/lib/projects-data/portfolio-data";
 
@@ -17,7 +16,6 @@ import { portfolioData } from "@/lib/projects-data/portfolio-data";
 const FeaturedProjects: FC = () => {
   const { ref } = useSectionInView({sectionName: "Projects", threshold: 0.5});
   const { setActiveSection }= useActiveSectionContext();
-  const { setActivePage } = useActivePageContext();
   
   return (
     <section id="projects" ref={ref} className="scroll-mt-28 mb-28">
@@ -34,7 +32,6 @@ const FeaturedProjects: FC = () => {
       <motion.div className="flex flex-col sm:flex-row items-center justify-center">
         <Link href="/projects" onClick={() => {
           setActiveSection('Projects');
-          setActivePage('projects');
         }}
           className="group bg-gray-800 text-white px-7 py-3 flex mt-8 text-center
           items-center gap-2 rounded-full hover:bg-gray-950 focus:scale-105 hover:scale-105 

@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
-import { useActivePageContext } from "@/context/ActivePageContextProvider";
 
 // Static Data Imports
 import { allProjectsData } from "@/lib/data";
@@ -22,7 +21,7 @@ const ProjectGrid: FC = () => {
           allProjectsData.map((project, idx) => (
             <React.Fragment key={idx}>
               <ProjectCard {...project.card} page={project.page} />
-              </React.Fragment>
+            </React.Fragment>
           ))
         }
       </div>
@@ -33,8 +32,6 @@ const ProjectGrid: FC = () => {
 type ProjectCardProps = (typeof allProjectsData)[number]["card"] & { page: PageName };
 
 const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL, pageURL, page}) => {
-  const { setActivePage } = useActivePageContext();
-
   return (
     <motion.div className="mb-3 sm:mb-8" initial="initial" whileInView="animate"
     viewport={{ once: true }}>
@@ -42,7 +39,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL,
          sm:pr-8 sm:h-[20rem] hover:bg-gray-200">
         <div className="t-4 pb-7 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full">
           <Link className="text-2xl font-semibold cursor-pointer hover:text-gray-600"
-          href={pageURL} onClick={() => setActivePage(page)}>
+          href={pageURL}>
             {title}
           </Link>
           <p className="mt-2 leading-relaxed text-gray-700">{description}</p>

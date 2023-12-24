@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
-import { useActivePageContext } from "@/context/ActivePageContextProvider";
 import { useInView } from "react-intersection-observer";
-import { projectBlogData } from "./projects-data/projectData";
 import type { SectionName } from "./types";
 
 
@@ -24,10 +22,8 @@ const useSectionInView = ({sectionName, threshold = 0.75}: useSectionInViewProps
   return { ref };
 }
 
-const useProject = () => {
-  const { activePage, setActivePage } = useActivePageContext();
-  // const project = projectBlogData[activePage];
-  // return project;
+const useProjectTOC = () => {
+  
 }
 
-export { useSectionInView, useProject }
+export { useSectionInView, useProjectTOC }
