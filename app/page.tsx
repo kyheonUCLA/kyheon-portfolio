@@ -1,10 +1,10 @@
 import { FC }  from 'react'
-import About from '@/components/portfolio-components/About'
-import Experience from '@/components/portfolio-components/Experience'
-import Intro from '@/components/portfolio-components/Intro'
-import FeaturedProjects from '@/components/portfolio-components/FeaturedProjects'
-import Skills from '@/components/portfolio-components/Skills'
-import Contact from '@/components/portfolio-components/Contact'
+import About from '@/components/portfolio/About'
+import Experience from '@/components/portfolio/Experience'
+import Intro from '@/components/portfolio/Intro'
+import FeaturedProjects from '@/components/portfolio/FeaturedProjects'
+import Skills from '@/components/portfolio/Skills'
+import Contact from '@/components/portfolio/Contact'
 
 const HomePage: FC = () => {
   return (
