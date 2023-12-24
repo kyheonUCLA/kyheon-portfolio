@@ -2,11 +2,11 @@
 
 import React, { FC } from "react";
 import { motion } from "framer-motion";
-import SectionHeading from "./SectionHeading";
-import { useSectionInView } from "@/lib/hooks";
+import SectionHeading from "../SectionHeading";
+import { useHeaderSectionInView } from "@/lib/hooks";
 
 const About: FC = () => {
-  const { ref } = useSectionInView({sectionName: "About", threshold: 0.75});
+  const { ref } = useHeaderSectionInView({sectionName: "About", threshold: 0.75});
 
   return (
     <motion.section id="about" ref={ref} className="mb-28 max-w-[45rem] text-center leading-8 

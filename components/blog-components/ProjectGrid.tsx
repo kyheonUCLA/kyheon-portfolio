@@ -2,13 +2,12 @@
 
 import React, { FC } from "react";
 import { motion } from "framer-motion";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
 
 // Static Data Imports
 import { allProjectsData } from "@/lib/data";
-import type { PageName } from "@/lib/types";
 
 const ProjectGrid: FC = () => {
   return (
@@ -20,7 +19,7 @@ const ProjectGrid: FC = () => {
         {
           allProjectsData.map((project, idx) => (
             <React.Fragment key={idx}>
-              <ProjectCard {...project.card} page={project.page} />
+              <ProjectCard {...project.card} />
             </React.Fragment>
           ))
         }
@@ -29,9 +28,9 @@ const ProjectGrid: FC = () => {
   )
 }
 
-type ProjectCardProps = (typeof allProjectsData)[number]["card"] & { page: PageName };
+type ProjectCardProps = (typeof allProjectsData)[number]["card"];
 
-const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL, pageURL, page}) => {
+const ProjectCard: FC<ProjectCardProps> = ({ title, description, tags, imageURL, pageURL}) => {
   return (
     <motion.div className="mb-3 sm:mb-8" initial="initial" whileInView="animate"
     viewport={{ once: true }}>

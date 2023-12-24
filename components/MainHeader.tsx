@@ -5,10 +5,10 @@ import { motion } from "framer-motion"
 import { portfolioData } from "@/lib/projects-data/portfolio-data";
 import Link from "next/link";
 import clsx from "clsx";
-import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { useActiveHeaderSectionContext } from "@/context/ActiveHeaderSectionContextProvider";
 
 const MainHeader = () => {
-  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const { activeHeaderSection, setActiveHeaderSection, setTimeOfLastClick } = useActiveHeaderSectionContext();
 
   return (
     <header className="z-[999] relative">
@@ -26,13 +26,13 @@ const MainHeader = () => {
           portfolioData.links.map(link => (
             <motion.li className="h-3/4 flex items-center justify-center relative" key={link.hash}
               initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-              <Link className={clsx("w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300  ", {"text-gray-950 dark:text-gray-200": activeSection === link.name})} 
+              <Link className={clsx("w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300  ", {"text-gray-950 dark:text-gray-200": activeHeaderSection === link.name})} 
               href={`/${link.hash}`} onClick={() => {
-                setActiveSection(link.name);
+                setActiveHeaderSection(link.name);
                 setTimeOfLastClick(Date.now());
                 }}>{link.name}
               {
-                link.name === activeSection && (<motion.span className="bg-gray-200 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                link.name === activeHeaderSection && (<motion.span className="bg-gray-200 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                 layoutId="activeSection" transition={{ type: "spring", stiffness: 380, damping: 30 }}></motion.span>)
               }
               </Link>

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import ProjectGrid from '@/components/ProjectGrid'
+import ProjectGrid from '@/components/blog-components/ProjectGrid'
 
 const ProjectsPage: FC = () => {
   return (

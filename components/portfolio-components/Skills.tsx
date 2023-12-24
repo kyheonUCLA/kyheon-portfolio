@@ -1,9 +1,9 @@
 "use client";
 
 import React, { FC } from "react";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../SectionHeading";
 import { portfolioData } from "@/lib/projects-data/portfolio-data";
-import { useSectionInView } from "@/lib/hooks";
+import { useHeaderSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
 const fadeInAnimationVariants = {
@@ -18,7 +18,7 @@ const fadeInAnimationVariants = {
 
 
 const Skills: FC = () => {
-  const { ref } = useSectionInView({ sectionName: "Skills", threshold: 0.25 });
+  const { ref } = useHeaderSectionInView({ sectionName: "Skills", threshold: 0.25 });
 
   return (
     <section id="skills" ref={ref} className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40">

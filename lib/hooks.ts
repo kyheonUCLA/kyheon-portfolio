@@ -1,29 +1,44 @@
 import { useEffect } from "react";
-import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { useActiveHeaderSectionContext } from "@/context/ActiveHeaderSectionContextProvider";
+import { useActiveNavbarSectionContext } from "@/context/ActiveNavbarSectionContextProvider";
 import { useInView } from "react-intersection-observer";
-import type { SectionName } from "./types";
+import type { HeaderSectionName, NavbarSectionName } from "./types";
 
 
-type useSectionInViewProps = {
-  sectionName: SectionName,
+type useHeaderSectionInViewProps = {
+  sectionName: HeaderSectionName,
   threshold: number
 }
 
-const useSectionInView = ({sectionName, threshold = 0.75}: useSectionInViewProps) => {
+const useHeaderSectionInView = ({sectionName, threshold = 0.75}: useHeaderSectionInViewProps) => {
   const { ref, inView } = useInView({ threshold });
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
+  const { setActiveHeaderSection, timeOfLastClick } = useActiveHeaderSectionContext();
   
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection(sectionName);
+      setActiveHeaderSection(sectionName);
     }
-  }, [inView, setActiveSection, timeOfLastClick, sectionName]) 
+  }, [inView, setActiveHeaderSection, timeOfLastClick, sectionName]) 
 
   return { ref };
 }
 
-const useProjectTOC = () => {
-  
+type useNavbarSectionInViewProps = {
+  sectionName: NavbarSectionName,
+  threshold: number
 }
 
-export { useSectionInView, useProjectTOC }
+const useNavbarSectionInView = ({sectionName, threshold = 0.75}: useNavbarSectionInViewProps) => {
+  const { ref, inView } = useInView({ threshold });
+  const { setActiveNavbarSection, timeOfLastClick } = useActiveNavbarSectionContext();
+  
+  useEffect(() => {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
+      setActiveNavbarSection(sectionName);
+    }
+  }, [inView, setActiveNavbarSection, timeOfLastClick, sectionName]) 
+
+  return { ref };
+}
+
+export { useHeaderSectionInView, useNavbarSectionInView }

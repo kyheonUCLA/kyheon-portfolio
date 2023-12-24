@@ -1,10 +1,9 @@
 import { portfolioData } from "./projects-data/portfolio-data";
-import { pageData, allProjectsData } from "./data";
+import { allProjectsData } from "./data";
 
-type PageName = (typeof pageData)[number]["name"];
-type SectionName = (typeof portfolioData.links)[number]["name"];
 type Theme = "light" | "dark";
-
 type ProjectDataType = (typeof allProjectsData)[number]
+type HeaderSectionName = (typeof portfolioData.links)[number]["name"];
+type NavbarSectionName = typeof allProjectsData[number]['toc'][number]["name"];
 
-export type { SectionName, PageName, Theme, ProjectDataType }
+export type { HeaderSectionName, NavbarSectionName, Theme, ProjectDataType }

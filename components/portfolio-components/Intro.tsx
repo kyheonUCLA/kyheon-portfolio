@@ -7,8 +7,8 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs"
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi"
 import pic2 from '@/public/portfolio-assets/pic2.png'
-import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { useHeaderSectionInView } from "@/lib/hooks";
+import { useActiveHeaderSectionContext } from "@/context/ActiveHeaderSectionContextProvider";
 
 const Intro = () => {
   const sampleImg = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100";
@@ -16,8 +16,8 @@ const Intro = () => {
   const githubURL = "https://github.com/kyheonUCLA";
   const linkedInURL= "https://www.linkedin.com/in/ky-heon-96a4b11b7";
 
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const { ref } = useSectionInView({sectionName: "Home", threshold: 0.8});
+  const { setActiveHeaderSection, setTimeOfLastClick } = useActiveHeaderSectionContext();
+  const { ref } = useHeaderSectionInView({sectionName: "Home", threshold: 0.8});
 
   return (
     <section ref={ref} id="home" className="mb-28 max-w-[50rem] text-center sm:bmb-0 scroll-mt-96">
@@ -45,7 +45,7 @@ const Intro = () => {
       <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
         initial={{ y: 100, opacity: 0 }} animate={{ y: 0 , opacity: 1 }} transition={{ delay: 0.1 }}>
         <Link href="#contact" onClick={() => {
-          setActiveSection("Contact"); 
+          setActiveHeaderSection("Contact"); 
           setTimeOfLastClick(Date.now()); }}
         className={`group bg-gray-800 text-white px-7 py-3 flex items-center gap-2 rounded-full
          hover:bg-gray-900 focus:scale-105 hover:scale-105 active:scale-105 ${buttonStyles}`}>Contact me here 
