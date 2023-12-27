@@ -2,7 +2,7 @@ import electro from "@/public/electro-assets/electro.png";
 
 const toc = [
   {
-    name: "Introduction",
+    name: "Electric Field Simulation & Modeling",
     hash: "#intro"
   },
   {

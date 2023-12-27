@@ -2,7 +2,7 @@ import chebyshev from "@/public/chebyshev-assets/mechanism-corrected.png";
 
 const toc = [
   {
-    name: "Introduction",
+    name: "Chebshev Mechanism Design & Analysis",
     hash: "#intro"
   },
   {
