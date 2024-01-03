@@ -23,7 +23,7 @@ const NavbarSection: FC<NavbarSectionProps> = ({name, link}) => {
     <li className="reltive flex flex-col items-center justify-center" key={link.hash}>
       <Link className={"w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition"} 
       href={`${path}${link.hash}`} onClick={() => {
-        setActiveNavbarSection(link.name);
+        setActiveNavbarSection(link.hash);
         setTimeOfLastClick(Date.now()); 
         }}>{name}    
       </Link>

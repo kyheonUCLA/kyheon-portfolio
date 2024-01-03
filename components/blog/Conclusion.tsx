@@ -8,13 +8,13 @@ import { useProjectContext } from "@/context/ProjectContextProvider";
 
 const Conclusion: FC = () => {
   const { project } = useProjectContext();
-  const sectionName = project.toc[project.toc.length - 1].name;
-  const { ref } = useNavbarSectionInView({sectionName: sectionName, threshold: 0.75});
+  const sectionHash = project.toc[project.toc.length - 1].hash;
+  const { ref } = useNavbarSectionInView({sectionHash, threshold: 0.75});
 
 
   return ( 
     <motion.section ref={ref} className="max-w-sm md:max-w-2xl">
-      <SectionHeading>{sectionName}</SectionHeading>
+      <SectionHeading>{sectionHash}</SectionHeading>
     </motion.section>
   )
 }

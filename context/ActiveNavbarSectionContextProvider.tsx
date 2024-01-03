@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, FC, createContext, useContext } from "react";
-import type { NavbarSectionName } from "@/lib/types";
+import type { NavbarSectionHash } from "@/lib/types";
 import { usePathname } from "next/navigation";
 import { useProjectContext } from "./ProjectContextProvider";
 
@@ -9,8 +9,8 @@ type ActiveNavbarSectionContextProviderProps = {
   children: React.ReactNode,
 }
 type ActiveNavbarSectionContextType = {
-  activeNavbarSection: NavbarSectionName,
-  setActiveNavbarSection: React.Dispatch<React.SetStateAction<NavbarSectionName>>,
+  activeNavbarSection: NavbarSectionHash,
+  setActiveNavbarSection: React.Dispatch<React.SetStateAction<NavbarSectionHash>>,
   timeOfLastClick: number,
   setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>,
 }
@@ -18,7 +18,7 @@ type ActiveNavbarSectionContextType = {
 const ActiveNavbarSectionContext = createContext<ActiveNavbarSectionContextType | null>(null);
 
 const ActiveNavbarSectionContextProvider: FC<ActiveNavbarSectionContextProviderProps>  = ({children}) => {
-  const [activeNavbarSection, setActiveNavbarSection] = useState<NavbarSectionName>("Introduction");
+  const [activeNavbarSection, setActiveNavbarSection] = useState<NavbarSectionHash>("#intro");
   const [timeOfLastClick, setTimeOfLastClick] = useState<number>(0);
 
   return (

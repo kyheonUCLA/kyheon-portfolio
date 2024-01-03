@@ -1,8 +1,8 @@
-import React, {useEffect, useMemo } from "react";
+import React, {useEffect } from "react";
 import { useActiveHeaderSectionContext } from "@/context/ActiveHeaderSectionContextProvider";
 import { useActiveNavbarSectionContext } from "@/context/ActiveNavbarSectionContextProvider";
 import { useInView } from "react-intersection-observer";
-import type { HeaderSectionName, NavbarSectionName } from "./types";
+import type { HeaderSectionName, NavbarSectionHash } from "./types";
 
 
 type useHeaderSectionInViewProps = {
@@ -24,19 +24,19 @@ const useHeaderSectionInView = ({sectionName, threshold = 0.75}: useHeaderSectio
 }
 
 type useNavbarSectionInViewProps = {
-  sectionName: NavbarSectionName,
+  sectionHash: NavbarSectionHash,
   threshold: number
 }
 
-const useNavbarSectionInView = ({sectionName, threshold = 0.75}: useNavbarSectionInViewProps) => {
+const useNavbarSectionInView = ({sectionHash, threshold = 0.75}: useNavbarSectionInViewProps) => {
   const { ref, inView } = useInView({ threshold });
   const { setActiveNavbarSection, timeOfLastClick } = useActiveNavbarSectionContext();
   
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveNavbarSection(sectionName);
+      setActiveNavbarSection(sectionHash);
     }
-  }, [inView, setActiveNavbarSection, timeOfLastClick, sectionName]) 
+  }, [inView, setActiveNavbarSection, timeOfLastClick, sectionHash]) 
 
   return { ref };
 }
