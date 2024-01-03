@@ -39,4 +39,4 @@ next-env.d.ts
 PROJECTS.md
 public/portfolio-assets/pic1.png
 
-components/Test.tsx
+components/portfolio/Test.tsx

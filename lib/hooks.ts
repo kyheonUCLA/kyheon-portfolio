@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, {useEffect, useMemo } from "react";
 import { useActiveHeaderSectionContext } from "@/context/ActiveHeaderSectionContextProvider";
 import { useActiveNavbarSectionContext } from "@/context/ActiveNavbarSectionContextProvider";
 import { useInView } from "react-intersection-observer";
@@ -41,4 +41,33 @@ const useNavbarSectionInView = ({sectionName, threshold = 0.75}: useNavbarSectio
   return { ref };
 }
 
-export { useHeaderSectionInView, useNavbarSectionInView }
+
+function useParseToHTML(inputString: string) {
+  const parts = inputString.split(/(\*|#[^#]+#|\{[^}]+\})/);
+
+  const jsxElements = parts.map((part, index) => {
+    if (part.startsWith('*')) {
+      const text = part.slice(1, -1);
+      return React.createElement('span', { key: index, className: "font-bold" }, text);
+    } else if (part.startsWith('#')) {
+      const text = part.slice(1, -1);
+      return React.createElement('span', { key: index, className: "italic" }, text);
+    } else if (part.startsWith('{')) {
+      const text = part.slice(1, -1);
+      return { text }; // return as plain object if you want to use it differently
+    } else {
+      return { text: part }; // use the part directly
+    }
+  });
+
+  return jsxElements.map((element, index) => (
+    React.isValidElement(element) ? element : React.createElement(React.Fragment, { key: index }, element.text)
+  ));
+}
+
+const test = (test: string) => {
+
+}
+
+
+export { useHeaderSectionInView, useNavbarSectionInView, useParseToHTML, test }

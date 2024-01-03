@@ -54,7 +54,7 @@ const useThemeContext = () => {
   const context = useContext(ThemeContext);
 
   if (context == null) {
-    throw new Error("useTheme must be consumed within an ActiveThemeContextProvider block")
+    throw new Error("useThemeContext must be consumed within an ActiveThemeContextProvider block")
   }
   return context;
 }

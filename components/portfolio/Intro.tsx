@@ -9,15 +9,16 @@ import { HiDownload } from "react-icons/hi"
 import pic2 from '@/public/portfolio-assets/pic2.png'
 import { useHeaderSectionInView } from "@/lib/hooks";
 import { useActiveHeaderSectionContext } from "@/context/ActiveHeaderSectionContextProvider";
+import { useParseToHTML, test } from "@/lib/hooks";
 
 const Intro = () => {
-  const sampleImg = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100";
   const buttonStyles = "cursor-pointer border border-black/10 outline-none transition";
   const githubURL = "https://github.com/kyheonUCLA";
   const linkedInURL= "https://www.linkedin.com/in/ky-heon-96a4b11b7";
 
   const { setActiveHeaderSection, setTimeOfLastClick } = useActiveHeaderSectionContext();
   const { ref } = useHeaderSectionInView({sectionName: "Home", threshold: 0.8});
+  const inputString = "*Hello, I'm Ky.* I'm a *self-taught developer* with *2 years* of experience. I enjoy building #sites & apps.# My focus is the MERN #(MongoDB, Express, React, Node)# tech stack. I built this website using Next.js";
 
   return (
     <section ref={ref} id="home" className="mb-28 max-w-[50rem] text-center sm:bmb-0 scroll-mt-96">
@@ -30,15 +31,12 @@ const Intro = () => {
           </motion.div>
         </div>
       </div>
-
+      
       <motion.h1 className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
       initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-      <span className="font-bold">Hello, I&apos;m Ky.</span> I&apos;m a{" "}
-      <span className="font-bold">self-taught developer</span> with{" "}
-      <span className="font-bold">2 years</span> of experience. I enjoy
-      building <span className="italic">sites &amp; apps</span>. My focus is the MERN{" "}
-      <span className="italic">{"("}MongoDB, Express, React, Node{")"}</span>{" "}tech stack.
-      <span className="">{" "}I built this website using Next.js </span>
+      {
+        useParseToHTML(inputString)
+      }
       </motion.h1>
 
 

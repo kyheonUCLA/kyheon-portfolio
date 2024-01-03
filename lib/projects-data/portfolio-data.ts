@@ -5,6 +5,10 @@ import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 
+import chebyshev from "@/public/chebyshev-assets/mechanism-corrected.png";
+import handaid from "@/public/handaid-assets/matlab-animation-tnb.gif";
+import odyssey from "@/public/odysseyai-assets/odysseyai.png";
+
 const mainLinks = [
   {
     name: "Home",
@@ -34,25 +38,25 @@ const mainLinks = [
 
 const featuredProjectsData = [
   {
-    title: "CorpComment",
+    title: "HandAid",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "A 4 Degrees of Freedom robot arm to help hospitalized patients feed themselves.",
+    tags: ["SOLIDWORKS", "MATLAB", "Dynamixel SDK", "Julia"],
+    imageUrl: handaid,
   },
   {
-    title: "rmtDev",
+    title: "Odyssey AI",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "A storytelling app that immortalizes your adventures using midjourney and GPT-3",
+    tags: ["Flask", "AWS", "Firebase", "Tailwind", "Python"],
+    imageUrl: odyssey,
   },
   {
-    title: "Word Analytics",
+    title: "Chebyshev Mechanism",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+      "The design and analysis of a sliding surfade using",
+    tags: ["MATLAB", "Julia", "SOLIDWORKS", "Tailwind", "Framer"],
+    imageUrl: chebyshev,
   },
 ] as const;
 
