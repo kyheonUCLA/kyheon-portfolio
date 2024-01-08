@@ -12,7 +12,7 @@ const fadeInAnimationVariants = {
   },
   animate: (idx:number) => ({
     opacity: 1, y: 0, 
-    transition: { delay: 0.025 * idx }
+    transition: { delay: 0.05 * idx }
   })
 } 
 
@@ -25,7 +25,18 @@ const Skills: FC = () => {
       <SectionHeading>Skills</SectionHeading>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-950">
         {
-          portfolioData.skills.map((skill, idx) => (
+          portfolioData.skills.software.map((skill, idx) => (
+            <motion.li variants={fadeInAnimationVariants} initial="initial" whileInView="animate"
+            viewport={{ once: true }} custom={idx}
+            className="bg-white border border-black/[0.1] rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80" 
+             key={idx}>{skill}</motion.li>
+          ))
+        }
+      </ul>
+
+      <ul className="mt-20 flex flex-wrap justify-center gap-2 text-lg text-gray-950">
+        {
+          portfolioData.skills.mechanical.map((skill, idx) => (
             <motion.li variants={fadeInAnimationVariants} initial="initial" whileInView="animate"
             viewport={{ once: true }} custom={idx}
             className="bg-white border border-black/[0.1] rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80" 

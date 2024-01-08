@@ -18,14 +18,18 @@ type NavbarSectionProps = {
 const NavbarSection: FC<NavbarSectionProps> = ({name, link}) => {
   const { setTimeOfLastClick, activeNavbarSection, setActiveNavbarSection } = useActiveNavbarSectionContext();
   const path = usePathname();
-
+  console.log(activeNavbarSection)
   return (
     <li className="reltive flex flex-col items-center justify-center" key={link.hash}>
       <Link className={"w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition"} 
       href={`${path}${link.hash}`} onClick={() => {
         setActiveNavbarSection(link.hash);
         setTimeOfLastClick(Date.now()); 
-        }}>{name}    
+        }}>{name}  
+        {
+          link.hash === activeNavbarSection && (<motion.span className="bg-gray-600 rounded-full inset-0 dark:bg-gray-800"
+          layoutId="activeNavbarSection" transition={{ type: "spring", stiffness: 380, damping: 30 }}></motion.span>)
+        }  
       </Link>
     </li>
   )

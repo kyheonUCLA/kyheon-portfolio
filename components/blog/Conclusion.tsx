@@ -14,7 +14,7 @@ const Conclusion: FC = () => {
 
   return ( 
     <motion.section ref={ref} className="max-w-sm md:max-w-2xl">
-      <SectionHeading>{sectionHash}</SectionHeading>
+      <SectionHeading>{project.toc[project.toc.length - 1].name}</SectionHeading>
     </motion.section>
   )
 }

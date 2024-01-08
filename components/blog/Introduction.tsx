@@ -13,7 +13,7 @@ const Introduction: FC = () => {
 
   return ( 
     <motion.section ref={ref} className="max-w-sm md:max-w-2xl">
-      <SectionHeading>{sectionHash}</SectionHeading>
+      <SectionHeading>{project.toc[0].name}</SectionHeading>
     </motion.section>
   )
 }

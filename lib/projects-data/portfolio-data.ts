@@ -54,33 +54,40 @@ const featuredProjectsData = [
   {
     title: "Chebyshev Mechanism",
     description:
-      "The design and analysis of a sliding surfade using",
+      "The design and analysis of a sliding surface",
     tags: ["MATLAB", "Julia", "SOLIDWORKS", "Tailwind", "Framer"],
     imageUrl: chebyshev,
   },
 ] as const;
 
-const skillsData = [
+const skillsData = {
+  software: [
   "HTML",
   "CSS",
-  "JavaScript",
-  "TypeScript",
+  "Typescript",
+  "Express",
   "React",
   "Next.js",
   "Node.js",
-  "Git",
+  "Firebase",
+  "Chrome Extension",
   "Tailwind",
-  "Prisma",
   "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
   "Express",
-  "PostgreSQL",
   "Python",
-  "Django",
-  "Framer Motion",
-] as const;
+  ],
+  mechanical: [
+    "SOLIDWORKS",
+    "Autodesk Inventor",
+    "MATLAB",
+    "Simulink",
+    "Multisim",
+    "Arduino",
+    "Raspberry Pi",
+    "Julia",
+    "Studio 5000",
+  ]
+} as const;
 
 const portfolioData = {featured: featuredProjectsData, skills: skillsData, links: mainLinks} as const;
 

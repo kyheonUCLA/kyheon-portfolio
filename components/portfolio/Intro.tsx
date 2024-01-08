@@ -9,7 +9,7 @@ import { HiDownload } from "react-icons/hi"
 import pic2 from '@/public/portfolio-assets/pic2.png'
 import { useHeaderSectionInView } from "@/lib/hooks";
 import { useActiveHeaderSectionContext } from "@/context/ActiveHeaderSectionContextProvider";
-import { useParseToHTML, test } from "@/lib/hooks";
+import { useParseToHTML } from "@/lib/hooks";
 
 const Intro = () => {
   const buttonStyles = "cursor-pointer border border-black/10 outline-none transition";
@@ -18,7 +18,7 @@ const Intro = () => {
 
   const { setActiveHeaderSection, setTimeOfLastClick } = useActiveHeaderSectionContext();
   const { ref } = useHeaderSectionInView({sectionName: "Home", threshold: 0.8});
-  const inputString = "*Hello, I'm Ky.* I'm a *self-taught developer* with *2 years* of experience. I enjoy building #sites & apps.# My focus is the MERN #(MongoDB, Express, React, Node)# tech stack. I built this website using Next.js";
+  const intro = "Hello, I'm *Ky.* I'm a self-taught developer with 2 years of experience. I enjoy building sites & apps. My focus is the MERN ^(MongoDB, Express, React, Node)^ tech stack. I built this website using Next.js";
 
   return (
     <section ref={ref} id="home" className="mb-28 max-w-[50rem] text-center sm:bmb-0 scroll-mt-96">
@@ -34,9 +34,7 @@ const Intro = () => {
       
       <motion.h1 className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
       initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-      {
-        useParseToHTML(inputString)
-      }
+      {useParseToHTML(intro)}
       </motion.h1>
 
 

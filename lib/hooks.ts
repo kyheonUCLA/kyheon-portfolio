@@ -42,32 +42,19 @@ const useNavbarSectionInView = ({sectionHash, threshold = 0.75}: useNavbarSectio
 }
 
 
-function useParseToHTML(inputString: string) {
-  const parts = inputString.split(/(\*|#[^#]+#|\{[^}]+\})/);
+function useParseToHTML(text: string) {
+  const parts = text.split(/(\^[^]*\^|\*[^]*\*)/).filter((element) => element.trim() !== "");
 
-  const jsxElements = parts.map((part, index) => {
-    if (part.startsWith('*')) {
-      const text = part.slice(1, -1);
-      return React.createElement('span', { key: index, className: "font-bold" }, text);
-    } else if (part.startsWith('#')) {
-      const text = part.slice(1, -1);
-      return React.createElement('span', { key: index, className: "italic" }, text);
-    } else if (part.startsWith('{')) {
-      const text = part.slice(1, -1);
-      return { text }; // return as plain object if you want to use it differently
+  return parts.map((part, idx) => {
+    if (part.startsWith("^")) {
+      return React.createElement('span', { key: idx, className: "italic" }, part.slice(1, -1));
+    } else if (part.startsWith("*")) {
+      return React.createElement('span', { key: idx, className: "font-bold" }, part.slice(1, -1));
     } else {
-      return { text: part }; // use the part directly
+      return React.createElement(React.Fragment, { key: idx }, part)
     }
-  });
-
-  return jsxElements.map((element, index) => (
-    React.isValidElement(element) ? element : React.createElement(React.Fragment, { key: index }, element.text)
-  ));
-}
-
-const test = (test: string) => {
-
+  })
 }
 
 
-export { useHeaderSectionInView, useNavbarSectionInView, useParseToHTML, test }
+export { useHeaderSectionInView, useNavbarSectionInView, useParseToHTML }
