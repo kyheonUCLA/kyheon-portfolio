@@ -14,7 +14,6 @@ const HomePage: FC = () => {
       <FeaturedProjects />
       <Skills />
       <Experience />
-      <Contact />
     </main>
   )
 }

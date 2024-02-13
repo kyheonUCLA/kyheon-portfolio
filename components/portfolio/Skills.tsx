@@ -5,6 +5,7 @@ import SectionHeading from "../SectionHeading";
 import { portfolioData } from "@/lib/projects-data/portfolio-data";
 import { useHeaderSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import SectionDivider from "../SectionDivider";
 
 const fadeInAnimationVariants = {
   initial: { 
@@ -33,7 +34,6 @@ const Skills: FC = () => {
           ))
         }
       </ul>
-
       <ul className="mt-20 flex flex-wrap justify-center gap-2 text-lg text-gray-950">
         {
           portfolioData.skills.mechanical.map((skill, idx) => (
