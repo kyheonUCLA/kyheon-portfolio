@@ -50,7 +50,7 @@ const Intro = () => {
 
         <a className={`group bg-white text-gray-950 px-7 py-3 flex items-center gap-2 
         rounded-full hover:bg-gray-200 focus:scale-105 hover:scale-105 active:scale-105
-        hover:text-color-950 dark:bg-white/20 dark:text-white/80 ${buttonStyles}`} href="/CV.pdf" download>
+        hover:text-color-950 dark:bg-white/20 dark:text-white/80 ${buttonStyles}`} href="/ky_heon_resume.pdf" download>
           Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition"/>
         </a>
 
