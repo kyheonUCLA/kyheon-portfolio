@@ -1,4 +1,5 @@
 import electro from "@/public/electro-assets/electro.png";
+import electro_image from "@/public/electro-assets/electro-600x500.png"
 
 const toc = [
   {
@@ -29,9 +30,9 @@ const toc = [
 
 const card = { 
   title: "Electro",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam aliquam ipsum eget luctus. Proin a tortor sit amet libero aliquam vestibulum. Quisque nec gravida velit",
+  description: "Created a website to help visualize and calculate electric field forces. The engine was made using Javascript and supports particle collision and animations",
   tags: ["P3.js", "Physics", "Simulation"],
-  imageURL: electro,
+  imageURL: electro_image,
   pageURL: "/projects/electro",
 } as const;
 

@@ -1,4 +1,5 @@
 import chebyshev from "@/public/chebyshev-assets/mechanism-corrected.png";
+import mechanism_image from "@/public/chebyshev-assets/mechanism-600x500.png"
 
 const toc = [
   {
@@ -29,9 +30,9 @@ const toc = [
 
 const card = { 
   title: "Chebyshev Linkage",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam aliquam ipsum eget luctus. Proin a tortor sit amet libero aliquam vestibulum. Quisque nec gravida velit",
+  description: "Coded a simulation of a rolling tabletop chebyshev mechanism to perform kinematic analysis. A 3D CAD model was created using the results of the simulation and theoretical analysis",
   tags: ["MATLAB", "SOLIDWORKS", "Julia"],
-  imageURL: chebyshev,
+  imageURL: mechanism_image,
   pageURL: "/projects/chebyshev",
 } as const;
 
