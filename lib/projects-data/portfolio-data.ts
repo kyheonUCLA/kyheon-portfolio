@@ -3,9 +3,6 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import { BsMoon } from "react-icons/bs";
 
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
 import React from "react";
 import chebyshev from "@/public/chebyshev-assets/mechanism-corrected.png";
 import handaid from "@/public/handaid-assets/matlab-animation-tnb.gif";
@@ -75,7 +72,6 @@ const skillsData = {
   "Chrome Extension",
   "Tailwind",
   "MongoDB",
-  "Express",
   "Python",
   ],
   mechanical: [
@@ -87,7 +83,7 @@ const skillsData = {
     "Arduino",
     "Raspberry Pi",
     "Julia",
-    "Studio 5000",
+    "PLC",
   ]
 } as const;
 
@@ -97,7 +93,7 @@ const experiencesData = [
     title: "EnviroCare International",
     location: "American Canyon, CA",
     description:
-      "I interned as a junior controls and automation engineer at a pollution control company.",
+      "Junior controls and automation engineer at a pollution control company",
     icon: React.createElement(BsMoon),
     date: "2020",
   },
@@ -105,7 +101,7 @@ const experiencesData = [
     title: "ASME X1 Robotics",
     location: "UCLA, CA",
     description:
-      "I worked on 2 big robotic projects, BruinBot and Boelt and learned cloud computing, serverless development, and computer vision.",
+      "Fullstack engineer working on computer vision, cloud computing, and quadruped robot kinematics",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - 2023",
   },
@@ -113,9 +109,17 @@ const experiencesData = [
     title: "Graduation",
     location: "UCLA, CA",
     description:
-      "Graduated from UCLA with a B.S. in Mechanical Engineering",
+      "Graduated from UCLA with a B.S. in Mechanical Engineering specializing in control theory, computer science and robotics",
     icon: React.createElement(LuGraduationCap),
     date: "2023",
+  },
+  {
+    title: "Freezer Engineering",
+    location: "Denver, CO",
+    description:
+      "Full time Automation & Controls engineer at a consulting firm for the Oil and Gas industry",
+    icon: React.createElement(CgWorkAlt),
+    date: "2024-2025",
   },
 ] as const;
 

@@ -5,6 +5,7 @@ import Intro from '@/components/portfolio/Intro'
 import FeaturedProjects from '@/components/portfolio/FeaturedProjects'
 import Skills from '@/components/portfolio/Skills'
 import Contact from '@/components/portfolio/Contact'
+import MainHeader from '@/components/MainHeader'
 
 const HomePage: FC = () => {
   return (

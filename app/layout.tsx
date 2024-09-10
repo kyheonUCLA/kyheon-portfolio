@@ -33,7 +33,7 @@ export default function RootLayout({
       </div>
       <ThemeContextProvider>
         <ActiveHeaderSectionContextProvider>
-          <MainHeader />
+          <MainHeader />  
           {children}
           <MainFooter />
         </ActiveHeaderSectionContextProvider>

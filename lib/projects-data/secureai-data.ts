@@ -29,11 +29,12 @@ const toc = [
 
 const card = { 
   title: "Secure AI",
-  description: "Platform to upload videos and search through the video frames using natural language. We used the gemini multimodal model and a vector database to perform retrieval augmented generation (RAG)",
+  description: "Platform to upload videos and search through the video frames using natural language with a multimodal model and retrieval augmented generation",
   tags: ["Flask", "Vector Database", "RAG", "Multimodal Model"],
   imageURL: secureai_image,
   pageURL: "/projects/secureai",
 } as const;
+
 
 const secureaiData = {page: "secureai", toc, card} as const;
 

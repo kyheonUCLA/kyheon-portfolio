@@ -1,8 +1,8 @@
-import mechanism_image from "@/public/chebyshev-assets/mechanism-600x500.png"
+import bruinbot_image from "@/public/bruinbot-assets/bruinbot-600x500.png"
 
 const toc = [
   {
-    name: "Chebshev Mechanism Design & Analysis",
+    name: "BruinBot",
     hash: "#intro"
   },
   {
@@ -28,13 +28,13 @@ const toc = [
 ] as const;
 
 const card = { 
-  title: "Chebyshev Linkage",
+  title: "BruinBot",
   description: "Coded a simulation of a rolling tabletop chebyshev mechanism to perform kinematic analysis. A 3D CAD model was created using the results of the simulation and theoretical analysis",
-  tags: ["MATLAB", "SOLIDWORKS", "Julia"],
-  imageURL: mechanism_image,
-  pageURL: "/projects/chebyshev",
+  tags: ["Cloud Computing", "Flask", "Firebase", "Computer Vision"],
+  imageURL: bruinbot_image,
+  pageURL: "/projects/bruinbot",
 } as const;
 
-const chebyshevData = {page: "chebyshev", toc, card} as const;
+const bruinbotData = {page: "bruinbot", toc, card} as const;
 
-export { chebyshevData };
+export { bruinbotData };
