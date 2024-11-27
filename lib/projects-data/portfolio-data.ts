@@ -1,5 +1,4 @@
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import { BsMoon } from "react-icons/bs";
 
@@ -30,8 +29,8 @@ const mainLinks = [
     hash: "#experience",
   },
   {
-    name: "Contact",
-    hash: "#contact",
+    name: "Blog",
+    hash: "#blog",
   },
 ] as const;
 
@@ -117,7 +116,7 @@ const experiencesData = [
     title: "Freezer Engineering",
     location: "Denver, CO",
     description:
-      "Full time Automation & Controls engineer at a consulting firm for the Oil and Gas industry",
+      "Automation & Controls engineer at a consulting firm for the Oil and Gas industry",
     icon: React.createElement(CgWorkAlt),
     date: "2024-2025",
   },

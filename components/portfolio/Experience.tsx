@@ -9,7 +9,7 @@ import { useThemeContext } from "@/context/ThemeContextProvider";
 import { portfolioData } from "@/lib/projects-data/portfolio-data";
 
 export default function Experience() {
-  const { ref } = useHeaderSectionInView({sectionName: "Experience", threshold: 0.75});
+  const { ref } = useHeaderSectionInView({sectionName: "Experience", threshold: 0.5});
 
   const { theme } = useThemeContext();
 
