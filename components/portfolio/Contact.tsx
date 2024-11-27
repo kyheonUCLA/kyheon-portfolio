@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useHeaderSectionInView } from "@/lib/hooks";
 
 const Contact: FC = () => {
-  const { ref } = useHeaderSectionInView({ sectionName: "Contact", threshold: 0.75 });
+  const { ref } = useHeaderSectionInView({ sectionName: "Blog", threshold: 0.75 });
 
   return (
     <motion.section ref={ref} id="contact" className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"

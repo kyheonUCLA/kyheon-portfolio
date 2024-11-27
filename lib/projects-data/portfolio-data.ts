@@ -93,7 +93,7 @@ const experiencesData = [
     location: "American Canyon, CA",
     description:
       "Junior controls and automation engineer at a pollution control company",
-    icon: React.createElement(BsMoon),
+    icon: React.createElement(CgWorkAlt),
     date: "2020",
   },
   {
@@ -116,7 +116,7 @@ const experiencesData = [
     title: "Freezer Engineering",
     location: "Denver, CO",
     description:
-      "Automation & Controls engineer at a consulting firm for the Oil and Gas industry",
+      "Automation & controls engineer for consulting firm in the oil and gas industry",
     icon: React.createElement(CgWorkAlt),
     date: "2024-2025",
   },
