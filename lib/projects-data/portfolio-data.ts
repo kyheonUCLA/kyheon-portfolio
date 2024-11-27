@@ -32,6 +32,10 @@ const mainLinks = [
     name: "Blog",
     hash: "#blog",
   },
+  {
+    name: "Contact",
+    hash: "#contact"
+  }
 ] as const;
 
 const featuredProjectsData = [
