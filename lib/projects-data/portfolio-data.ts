@@ -30,7 +30,7 @@ const mainLinks = [
   },
   {
     name: "Blog",
-    hash: "#blog",
+    hash: "blog",
   },
   {
     name: "Contact",
