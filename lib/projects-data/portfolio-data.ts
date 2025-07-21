@@ -135,7 +135,7 @@ const experiencesData = [
     description:
       "Automation & Controls Engineering consultant for the oil and gas, water treatment, mining, and manufacturing industries",
     icon: React.createElement(CgWorkAlt),
-    date: "2024-2025",
+    date: "2024 - 2025",
   },
   // {
   //   title: "Divcon Controls",
