@@ -72,21 +72,34 @@ const skillsData = {
   "Next.js",
   "Node.js",
   "Firebase",
-  "Chrome Extension",
+  "Manifest V3",
   "Tailwind",
   "MongoDB",
   "Python",
   ],
   mechanical: [
     "SOLIDWORKS",
-    "Autodesk Inventor",
+    "Inventor",
+    "AutoCAD",
     "MATLAB",
     "Simulink",
-    "Multisim",
     "Arduino",
     "Raspberry Pi",
     "Julia",
-    "PLC",
+  ],
+  automation: [
+    "ControlLogix",
+    "SIMATIC",
+    "PowerFlex",
+    "Altivar",
+    "Danfoss",
+    "Ignition",
+    "RSLogix",
+    "C-More",
+    "Factory Talk",
+    "PlantPAx",
+    "TwinCAT",
+    "Codesys"
   ]
 } as const;
 
@@ -96,7 +109,7 @@ const experiencesData = [
     title: "EnviroCare International",
     location: "American Canyon, CA",
     description:
-      "Junior controls and automation engineer at a pollution control company",
+      "Junior controls and automation engineer at a pollution control company in the food and beverage industry",
     icon: React.createElement(CgWorkAlt),
     date: "2020",
   },
@@ -104,7 +117,7 @@ const experiencesData = [
     title: "ASME X1 Robotics",
     location: "UCLA, CA",
     description:
-      "Fullstack engineer working on computer vision, cloud computing, and quadruped robot kinematics",
+      "Fullstack engineer working on computer vision, cloud computing, and robot kinematics",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - 2023",
   },
@@ -120,10 +133,18 @@ const experiencesData = [
     title: "Freezer Engineering",
     location: "Denver, CO",
     description:
-      "Automation & controls engineer for consulting firm in the oil and gas industry",
+      "Automation & Controls Engineering consultant for the oil and gas, water treatment, mining, and manufacturing industries",
     icon: React.createElement(CgWorkAlt),
     date: "2024-2025",
   },
+  // {
+  //   title: "Divcon Controls",
+  //   location: "Dallas, TX",
+  //   description:
+  //     "System Integrator",
+  //   icon: React.createElement(CgWorkAlt),
+  //   date: "2025-2026",
+  // },
 ] as const;
 
 const portfolioData = {
