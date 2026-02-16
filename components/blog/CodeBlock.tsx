@@ -18,7 +18,7 @@ const CodeBlock = () => {
 }
 
 ReactDOM.render(
-  <HelloMessage name="Taylor" />, 
+  <HelloMessage name="Ky" />, 
   mountNode 
 );`
 
