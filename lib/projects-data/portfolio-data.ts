@@ -137,14 +137,14 @@ const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "2024 - 2025",
   },
-  // {
-  //   title: "Divcon Controls",
-  //   location: "Dallas, TX",
-  //   description:
-  //     "System Integrator",
-  //   icon: React.createElement(CgWorkAlt),
-  //   date: "2025-2026",
-  // },
+  {
+    title: "Divcon Controls",
+    location: "Dallas, TX",
+    description:
+      "Systems integration engineer for hyperscalers in the AI industry",
+    icon: React.createElement(CgWorkAlt),
+    date: "2025-Current",
+  }
 ] as const;
 
 const portfolioData = {
