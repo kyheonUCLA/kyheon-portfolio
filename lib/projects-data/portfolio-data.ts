@@ -140,9 +140,7 @@ const experiencesData = [
   {
     title: "Divcon Controls",
     location: "Dallas, TX",
-    description:
-<<<<<<< HEAD
-      "Systems Engineer for Hyperscalers, delivering AI/ML infrastructure and GPU compute optimization for inference and training AI workloads",
+    description: "Systems Engineer for Hyperscalers, delivering AI/ML infrastructure and GPU compute optimization for AI inference and training",
     icon: React.createElement(CgWorkAlt),
     date: "2025-Current",
   },
