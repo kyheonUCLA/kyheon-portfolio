@@ -141,10 +141,11 @@ const experiencesData = [
     title: "Divcon Controls",
     location: "Dallas, TX",
     description:
-      "Systems integration engineer for hyperscalers in the AI industry",
+<<<<<<< HEAD
+      "Systems Engineer for Hyperscalers, delivering AI/ML infrastructure and GPU compute optimization for inference and training AI workloads",
     icon: React.createElement(CgWorkAlt),
     date: "2025-Current",
-  }
+  },
 ] as const;
 
 const portfolioData = {

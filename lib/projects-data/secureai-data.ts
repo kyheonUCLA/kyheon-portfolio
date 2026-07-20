@@ -1,30 +1,12 @@
 import secureai_image from "@/public/secureai-assets/secureai-600x500.png"
 
 const toc = [
-  {
-    name: "Secure AI",
-    hash: "#intro"
-  },
-  {
-    name: "Background",
-    hash: "#background"
-  },
-  {
-    name: "Section1",
-    hash: "#section1"
-  },
-  {
-    name: "Section2",
-    hash: "#section2"
-  },
-  {
-    name: "Section3",
-    hash: "#section3"
-  },
-  {
-    name: "Conclusion",
-    hash: "#conclusion"
-  },
+  { name: "Overview", hash: "#overview" },
+  { name: "Background", hash: "#background" },
+  { name: "Architecture", hash: "#architecture" },
+  { name: "Implementation", hash: "#implementation" },
+  { name: "Results", hash: "#results" },
+  { name: "Conclusion", hash: "#conclusion" },
 ] as const;
 
 const card = { 

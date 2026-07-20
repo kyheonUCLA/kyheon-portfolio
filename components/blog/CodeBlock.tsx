@@ -1,39 +1,19 @@
 "use client"
-import React from 'react'
-import { CopyBlock, dracula} from 'react-code-blocks'
-const CodeBlock = () => {
+import React, { FC } from 'react'
+import { CopyBlock, dracula } from 'react-code-blocks'
 
-  const test = `class HelloMessage extends React.Component {
-  handlePress = () => {
-    alert('Hello')
-  }
-  render() {
-    return (
-      <div>
-        <p>Hello {this.props.name}</p>
-        <button onClick={this.handlePress}>Say Hello</button>
-      </div>
-    );
-  }
-}
+type CodeBlockProps = { language: string; code: string }
 
-ReactDOM.render(
-  <HelloMessage name="Ky" />, 
-  mountNode 
-);`
-
-
-  return (
-    <section>
-=      <CopyBlock
-          language={"jsx"}
-          text={test}
-          showLineNumbers={true}
-          theme={dracula}
-          codeBlock
-        />    
-    </section>
-  )
-}
+const CodeBlock: FC<CodeBlockProps> = ({ language, code }) => (
+  <section>
+    <CopyBlock
+      language={language}
+      text={code}
+      showLineNumbers={true}
+      theme={dracula}
+      codeBlock
+    />
+  </section>
+)
 
 export default CodeBlock

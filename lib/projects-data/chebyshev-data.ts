@@ -1,30 +1,12 @@
 import mechanism_image from "@/public/chebyshev-assets/mechanism-600x500.png"
 
 const toc = [
-  {
-    name: "Chebshev Mechanism Design & Analysis",
-    hash: "#intro"
-  },
-  {
-    name: "Background",
-    hash: "#background"
-  },
-  {
-    name: "Section1",
-    hash: "#section1"
-  },
-  {
-    name: "Section2",
-    hash: "#section2"
-  },
-  {
-    name: "Section3",
-    hash: "#section3"
-  },
-  {
-    name: "Conclusion",
-    hash: "#conclusion"
-  },
+  { name: "Overview", hash: "#overview" },
+  { name: "Background", hash: "#background" },
+  { name: "Design", hash: "#design" },
+  { name: "Analysis", hash: "#analysis" },
+  { name: "Results", hash: "#results" },
+  { name: "Conclusion", hash: "#conclusion" },
 ] as const;
 
 const card = { 

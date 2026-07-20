@@ -1,10 +1,5 @@
-import { FC } from 'react';
+import { redirect } from 'next/navigation'
 
-const ProjectsPage: FC = () => {
-  return (
-    <main className="flex flex-col items-center px-4">
-    </main>
-  )
+export default function ProjectsPage() {
+  redirect('/blog')
 }
-
-export default ProjectsPage;

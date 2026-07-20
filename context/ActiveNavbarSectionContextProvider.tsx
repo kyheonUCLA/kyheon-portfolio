@@ -18,7 +18,7 @@ type ActiveNavbarSectionContextType = {
 const ActiveNavbarSectionContext = createContext<ActiveNavbarSectionContextType | null>(null);
 
 const ActiveNavbarSectionContextProvider: FC<ActiveNavbarSectionContextProviderProps>  = ({children}) => {
-  const [activeNavbarSection, setActiveNavbarSection] = useState<NavbarSectionHash>("#intro");
+  const [activeNavbarSection, setActiveNavbarSection] = useState<NavbarSectionHash>("#overview");
   const [timeOfLastClick, setTimeOfLastClick] = useState<number>(0);
 
   return (
