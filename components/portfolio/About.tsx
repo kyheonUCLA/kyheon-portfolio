@@ -6,7 +6,7 @@ import SectionHeading from "../SectionHeading";
 import { useHeaderSectionInView, useParseToHTML } from "@/lib/hooks";
 
 const About: FC = () => {
-  const { ref } = useHeaderSectionInView({sectionName: "About", threshold: 0.75});
+  const { ref } = useHeaderSectionInView({ sectionName: "About" });
   const aboutme1 = "After graduating from UCLA with a degree in *Mechanical Engineering*, I decided to pursue my passion for programming. I taught myself modern web development and frontend design.";
   const aboutme2 = "My favorite part of programming is the problem-solving aspect. I love the feeling of finally figuring out a solution to a problem. I am always looking to learn new technologies.";
   const aboutme3 = "When I'm not coding, I enjoy playing video games, watching movies, and playing with my dog. I also enjoy learning new things. I am currently learning about history and philosophy. I'm also learning how to play the guitar.";

@@ -4,6 +4,7 @@ import React, { FC } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 // Static Data Imports
 import { allProjectsData } from "@/lib/data";
@@ -18,16 +19,15 @@ type NavbarSectionProps = {
 const NavbarSection: FC<NavbarSectionProps> = ({name, link}) => {
   const { setTimeOfLastClick, activeNavbarSection, setActiveNavbarSection } = useActiveNavbarSectionContext();
   const path = usePathname();
-  console.log(activeNavbarSection)
   return (
-    <li className="reltive flex flex-col items-center justify-center" key={link.hash}>
-      <Link className={"w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition"} 
+    <li className="relative flex flex-col items-center justify-center" key={link.hash}>
+      <Link className={clsx("w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition", {"text-gray-950 dark:text-gray-200": link.hash === activeNavbarSection})}
       href={`${path}${link.hash}`} onClick={() => {
         setActiveNavbarSection(link.hash);
         setTimeOfLastClick(Date.now()); 
         }}>{name}  
         {
-          link.hash === activeNavbarSection && (<motion.span className="bg-gray-600 rounded-full inset-0 dark:bg-gray-800"
+          link.hash === activeNavbarSection && (<motion.span className="bg-gray-200 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
           layoutId="activeNavbarSection" transition={{ type: "spring", stiffness: 380, damping: 30 }}></motion.span>)
         }  
       </Link>

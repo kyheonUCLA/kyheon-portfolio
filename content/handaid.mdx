@@ -1,26 +1,60 @@
 ## Overview
 
-{/* TODO: Write a 2-3 paragraph overview of HandAid — the problem it solves and what it does */}
+HandAid is a 4-degree-of-freedom robot arm built to help hospital patients with limited mobility feed themselves. For someone recovering from surgery, living with a spinal cord injury, or dealing with tremors, eating usually means waiting for a nurse or family member. HandAid aims to give some of that independence back with a small bedside arm that brings food from the plate to the patient's mouth.
+
+The arm is a serial chain of four revolute joints, driven by daisy-chained Dynamixel servos mounted on 3D-printed links. I drafted the initial mechanical design in SOLIDWORKS, wrote a Julia package that solves the arm's forward and inverse kinematics from its Denavit–Hartenberg (DH) parameters, built a MATLAB app to simulate and visualize its paths, and wrote the servo position control with the Dynamixel SDK, including PS4 controller input for teleoperation.
 
 ## Background
 
-{/* TODO: Motivation — why hospital patients need this, existing solutions, clinical constraints */}
+Feeding assistance is one of the most common and most time-consuming tasks in inpatient care, and it's one where losing independence hits hard. Commercial feeding robots exist, but they're expensive, bulky, and often limited to fixed scoop-and-lift motions that don't adapt to different plates, foods, or patient positions.
+
+Being next to a hospital bed puts real constraints on the design:
+
+- **Safety:** the arm works near a patient's face, so its motion has to be slow, predictable, and low-force.
+- **Footprint:** it has to fit on an overbed table without getting in the way of care.
+- **Cost and serviceability:** printed parts and off-the-shelf servos keep it cheap and easy to repair.
+- **Simple control:** the patient, or a caregiver, needs to be able to operate it with minimal training.
 
 ## Design
 
-{/* TODO: Mechanical design — DOF breakdown, joint selection, 3D printed component design, Dynamixel servo setup */}
+The arm uses four revolute joints. A **base** joint swings the arm between the plate and the patient. **Shoulder and elbow** joints set reach and height. A **wrist** joint at the end of the forearm turns the 3D-printed utensil holder to tilt the spoon.
+
+![HandAid CAD model](/handaid-assets/handaid-model.png)
+
+The links are 3D-printed, which made it fast to iterate on lengths and joint housings. Each joint is driven by a Dynamixel servo, mostly MX-28AR units. The servos are daisy-chained on a single bus, so the whole arm runs on one cable, and each servo provides closed-loop position control and reports its own position.
+
+{/* TODO: Add link lengths and payload/reach targets */}
 
 ## Kinematics
 
-{/* TODO: Forward/inverse kinematics, workspace analysis, MATLAB simulation */}
+The arm is described with standard DH parameters, one row per joint. From those, the Julia package builds each joint's homogeneous transform and multiplies them along the chain:
 
-<CodeBlock language="matlab" code={`% TODO: Add kinematics code — DH parameters, transformation matrices, etc.
+- **Forward kinematics:** given the four joint angles, compute the pose of the spoon.
+- **Inverse kinematics:** given a target spoon position (the plate, or the patient's mouth), solve for the joint angles that reach it.
+
+<CodeBlock language="julia" code={`# TODO: paste the DH table and forward/inverse kinematics functions from the Julia package
 `} />
+
+Before running anything on hardware, every path was checked in a MATLAB app that animates the arm along a planned trajectory and plots its moving coordinate frames. That catches unreachable targets, joint-limit violations, and awkward elbow flips on screen instead of on the robot.
+
+![MATLAB path simulation](/handaid-assets/matlab-animation-tnb.gif)
+
+Validated joint trajectories are sent to the servos as position commands through the Dynamixel SDK. A PS4 controller mapping lets an operator drive the arm directly.
 
 ## Results
 
-{/* TODO: Testing results — range of motion, accuracy, patient feedback or observations */}
+![HandAid prototype](/handaid-assets/handaid.png)
+
+{/* TODO: Fill in measured results — reach/workspace, positioning repeatability, cycle time for a scoop-to-mouth motion, and any user testing or feedback */}
+
+The prototype pairs the printed arm with the Julia kinematics and the MATLAB simulator: trajectories are planned and checked in simulation, then sent to the servos as position commands.
 
 ## Conclusion
 
-{/* TODO: Lessons learned, what you'd improve, future directions */}
+HandAid brought my mechanical, math, and software work together in one project. The kinematics are textbook. Most of the effort went into the details around them: keeping simulation and hardware consistent, picking DH frames that keep the math manageable, and designing printed parts that hold up under servo loads.
+
+Future directions:
+
+- **Closed-loop targeting:** add a camera so the arm finds the plate and the patient's mouth itself, instead of using preset positions.
+- **Compliance and safety:** use servo current sensing to detect contact and stop, important for any device near a person's face.
+- **Accessible input:** add voice, sip-and-puff, or head-tracking controls for patients who can't use a gamepad.

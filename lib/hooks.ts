@@ -7,11 +7,12 @@ import type { HeaderSectionName, NavbarSectionHash } from "./types";
 
 type useHeaderSectionInViewProps = {
   sectionName: HeaderSectionName,
-  threshold: number
 }
 
-const useHeaderSectionInView = ({sectionName, threshold = 0.75}: useHeaderSectionInViewProps) => {
-  const { ref, inView } = useInView({ threshold });
+// A section is active while it crosses the vertical middle of the viewport. A visibility
+// threshold can't work for sections taller than the screen (e.g. the Experience timeline).
+const useHeaderSectionInView = ({sectionName}: useHeaderSectionInViewProps) => {
+  const { ref, inView } = useInView({ rootMargin: "-50% 0px -50% 0px", threshold: 0 });
   const { setActiveHeaderSection, timeOfLastClick } = useActiveHeaderSectionContext();
   
   useEffect(() => {
@@ -43,7 +44,7 @@ const useNavbarSectionInView = ({sectionHash, threshold = 0.75}: useNavbarSectio
 
 
 function useParseToHTML(text: string) {
-  const parts = text.split(/(\^[^]*\^|\*[^]*\*)/).filter((element) => element.trim() !== "");
+  const parts = text.split(/(\^[^^]*\^|\*[^*]*\*)/).filter((element) => element.trim() !== "");
 
   return parts.map((part, idx) => {
     if (part.startsWith("^")) {

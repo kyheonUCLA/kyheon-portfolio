@@ -19,7 +19,7 @@ const fadeInAnimationVariants = {
 
 
 const Skills: FC = () => {
-  const { ref } = useHeaderSectionInView({ sectionName: "Skills", threshold: 0.25 });
+  const { ref } = useHeaderSectionInView({ sectionName: "Skills" });
 
   return (
     <section id="skills" ref={ref} className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40">

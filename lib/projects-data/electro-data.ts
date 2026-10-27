@@ -13,7 +13,7 @@ const toc = [
 const card = { 
   title: "Electro",
   description: "Created a website to help visualize and calculate electric field forces. The engine was made using Javascript and supports particle collision and animations",
-  tags: ["P3.js", "Physics", "Simulation"],
+  tags: ["p5.js", "Physics", "Simulation"],
   imageURL: electro_image,
   pageURL: "/projects/electro",
 } as const;

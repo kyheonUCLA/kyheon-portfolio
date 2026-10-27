@@ -14,7 +14,7 @@ import { portfolioData } from "@/lib/projects-data/portfolio-data";
 
 
 const FeaturedProjects: FC = () => {
-  const { ref } = useHeaderSectionInView({sectionName: "Projects", threshold: 0.5});
+  const { ref } = useHeaderSectionInView({ sectionName: "Projects" });
   const { setActiveHeaderSection }= useActiveHeaderSectionContext();
   
   return (

@@ -16,6 +16,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { content } = await compileMDX({
     source,
     options: {
+      // content/ is trusted local MDX; v6 strips JSX expressions like code={`...`} unless this is off
+      blockJS: false,
       mdxOptions: {
         rehypePlugins: [rehypeSlug],
       },
